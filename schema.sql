@@ -52,27 +52,4 @@ CREATE TABLE timeslots (
     REFERENCES users(_id)
 );
 
-INSERT INTO users (username) VALUES ('aftersalt');
-INSERT INTO users (username) VALUES ('wavydavy');
-INSERT INTO users (username) VALUES ('esey');
-INSERT INTO users (username) VALUES ('tyler');
-INSERT INTO users (username) VALUES ('collin');
 
-INSERT INTO restaurants (rest_name, street_number, street_name, street_type, city, state, zip, days_open, opening_time, closing_time, table_count) 
-VALUES 
-('restaurant1', '1111', 'streetname1', 'st.', 'SF', 'CA', 95132, 
-JSON_OBJECT('Sunday', false, 'Monday', true, 'Tuesday', true, 'Wednesday', true, 'Thursday', true, 'Friday', true, 'Saturday', false), 
-'09:00:00', '20:00:00', 5);
-
-INSERT INTO restaurants (rest_name, street_number, street_name, street_type, city, state, zip, days_open, opening_time, closing_time, table_count) 
-VALUES 
-('restaurant2', '2222', 'streetname2', 'dr.', 'SF', 'CA', 95133, 
-JSON_OBJECT('Sunday', false, 'Monday', true, 'Tuesday', true, 'Wednesday', true, 'Thursday', true, 'Friday', true, 'Saturday', false), 
-'09:00:00', '20:00:00', 5);
-
-
-INSERT INTO tables (rest_id, min_seating, max_seating, availability) 
-VALUES (1, 2, 5, JSON_ARRAY(JSON_ARRAY('09:00:00', '11:00:00'), JSON_ARRAY('18:00:00','20:00:00')));
-
-INSERT INTO tables (rest_id, min_seating, max_seating, availability) 
-VALUES (2, 2, 5, JSON_ARRAY(JSON_ARRAY('11:00:00', '13:00:00'), JSON_ARRAY('15:00:00','17:00:00'), JSON_ARRAY('18:00:00','20:00:00')));
