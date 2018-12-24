@@ -74,6 +74,87 @@ const generateCalendarMonth = (monthIndex, year) => {
   return null;
 };
 
+console.log('2018 CALENDAR DESCENDING BY MONTH');
+console.log(generateCalendarMonth(11, 2018));
+console.log(generateCalendarMonth(10, 2018));
+console.log(generateCalendarMonth(9, 2018));
+console.log(generateCalendarMonth(8, 2018));
+console.log(generateCalendarMonth(7, 2018));
+console.log(generateCalendarMonth(6, 2018));
+console.log(generateCalendarMonth(5, 2018));
+console.log(generateCalendarMonth(4, 2018));
+console.log(generateCalendarMonth(3, 2018));
+console.log(generateCalendarMonth(2, 2018));
+console.log(generateCalendarMonth(1, 2018));
+console.log(generateCalendarMonth(0, 2018));
+console.log('/////////////////////')
+console.log('2017 CALENDAR DESCENDING BY MONTH');
+console.log(generateCalendarMonth(11, 2017));
+console.log(generateCalendarMonth(10, 2017));
+console.log(generateCalendarMonth(9, 2017));
+console.log(generateCalendarMonth(8, 2017));
+console.log(generateCalendarMonth(7, 2017));
+console.log(generateCalendarMonth(6, 2017));
+console.log(generateCalendarMonth(5, 2017));
+console.log(generateCalendarMonth(4, 2017));
+console.log(generateCalendarMonth(3, 2017));
+console.log(generateCalendarMonth(2, 2017));
+console.log(generateCalendarMonth(1, 2017));
+console.log(generateCalendarMonth(0, 2017));
+console.log('/////////////////////')
+console.log('2016 CALENDAR DESCENDING BY MONTH');
+console.log(generateCalendarMonth(11, 2016));
+console.log(generateCalendarMonth(10, 2016));
+console.log(generateCalendarMonth(9, 2016));
+console.log(generateCalendarMonth(8, 2016));
+console.log(generateCalendarMonth(7, 2016));
+console.log(generateCalendarMonth(6, 2016));
+console.log(generateCalendarMonth(5, 2016));
+console.log(generateCalendarMonth(4, 2016));
+console.log(generateCalendarMonth(3, 2016));
+console.log(generateCalendarMonth(2, 2016));
+console.log(generateCalendarMonth(1, 2016));
+console.log(generateCalendarMonth(0, 2016));
+console.log('/////////////////////')
+console.log('2015 CALENDAR DESCENDING BY MONTH');
+console.log(generateCalendarMonth(11, 2015));
+console.log(generateCalendarMonth(10, 2015));
+console.log(generateCalendarMonth(9, 2015));
+console.log(generateCalendarMonth(8, 2015));
+console.log(generateCalendarMonth(7, 2015));
+console.log(generateCalendarMonth(6, 2015));
+console.log(generateCalendarMonth(5, 2015));
+console.log(generateCalendarMonth(4, 2015));
+console.log(generateCalendarMonth(3, 2015));
+console.log(generateCalendarMonth(2, 2015));
+console.log(generateCalendarMonth(1, 2015));
+console.log(generateCalendarMonth(0, 2015));
+
+
+
+// LEAP YEARS
+console.log('LEAP YEARS LEAP YEARS LEAP YEARS LEAP YEARS LEAP YEARS')
+console.log('2012')
+console.log(generateCalendarMonth(1, 2012));
+console.log('2016')
+console.log(generateCalendarMonth(1, 2016));
+console.log('2020')
+console.log(generateCalendarMonth(1, 2020));
+console.log('2024')
+console.log(generateCalendarMonth(1, 2024));
+console.log('2028')
+console.log(generateCalendarMonth(1, 2028));
+console.log('2032')
+console.log(generateCalendarMonth(1, 2032));
+console.log('2036')
+console.log(generateCalendarMonth(1, 2036));
+console.log('2040')
+console.log(generateCalendarMonth(1, 2040));
+console.log('2044')
+console.log(generateCalendarMonth(1, 2044));
+console.log('2048')
+console.log(generateCalendarMonth(1, 2048));
+
 module.exports = {
   generateCalendarMonth
 };
