@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import CSSModules from 'react-css-modules';
+import style from './hours.css';
 
 class Hours extends Component {
   constructor(props) {
@@ -9,9 +11,10 @@ class Hours extends Component {
   render() {
     return (
       <div id="biz-hours">
+        <h3 styleName="biz-hours">Hours</h3>
       </div>
     );
   }
 }
 
-export default Hours
+export default CSSModules(Hours, style, {allowMultiple: true});
