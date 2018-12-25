@@ -1,4 +1,38 @@
 .biz-hours {
-  color: #d32323;
   font-family: 'helvetica neue';
 }
+
+.biz-hours-header {
+  color: #d32323;
+  margin-left: 20px;
+}
+
+.open-now {
+  color: #41a700;
+  font-weight: 600;
+}
+
+.hours-table {
+  border-collapse: separate;
+  border-spacing: 20px 0;
+}
+
+.biz-pencil {
+  margin-right: 10px;
+}
+
+.biz-info-link {
+  margin: 10px 0 10px 20px;
+  color: #0073bb;
+}
+
+.biz-link {
+  text-decoration: none;
+  color: #0073bb;
+}
+
+.biz-link:hover {
+  text-decoration: underline;
+  color: #0073bb;
+}
+
