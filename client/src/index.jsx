@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Reservations from './components/Reservations.jsx';
+import Sidebar from './components/Sidebar.jsx';
 
-ReactDOM.render(<Reservations />, document.getElementById('reservations'));
+ReactDOM.render(<Sidebar />, document.getElementById('sidebar'));
