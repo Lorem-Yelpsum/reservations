@@ -11,15 +11,17 @@ class Calendar extends Component {
       <div id="calendar">
         <table>
           <thead>
-            <th>S</th>
-            <th>M</th>
-            <th>T</th>
-            <th>W</th>
-            <th>T</th>
-            <th>F</th>
-            <th>S</th>
           </thead>
           <tbody>
+            <tr>
+              <th>S</th>
+              <th>M</th>
+              <th>T</th>
+              <th>W</th>
+              <th>T</th>
+              <th>F</th>
+              <th>S</th>
+            </tr>
             <tr>
               <td></td>
               <td></td>
