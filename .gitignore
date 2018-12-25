@@ -62,4 +62,5 @@ typings/
 
 config.js
 .DS_Store
+bundle.js
 
