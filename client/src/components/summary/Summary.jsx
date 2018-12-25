@@ -9,7 +9,7 @@ class Summary extends Component {
   render() {
     return (
       <div className="island summary">
-    </div>
+      </div>
     );
   }
 }
