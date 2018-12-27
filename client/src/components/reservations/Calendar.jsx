@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import CSSModules from 'react-css-modules';
+import style from './calendar.css';
+
 
 class Calendar extends Component {
   constructor(props) {
@@ -8,7 +11,7 @@ class Calendar extends Component {
 
   render() {
     return (
-      <div id="calendar">
+      <div styleName="calendar">
         <table>
           <thead>
           </thead>
@@ -83,4 +86,4 @@ class Calendar extends Component {
   }
 }
 
-export default Calendar;
+export default CSSModules(Calendar, style, {allowMultiple: true});

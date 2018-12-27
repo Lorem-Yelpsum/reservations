@@ -14,24 +14,30 @@ class Summary extends Component {
       <div styleName="island-summary">
         <ul>
           <li>
-            <Icon name={'24x24_clock'}/>
-            <div>
+            <div styleName="li-item-icon">
+              <Icon name={'24x24_clock'}/>
+            </div>
+            <div styleName="li-underline li-description">
               <dl>
                 <dt>Today</dt>
-                <dd><span>8:00 am</span> - <span>10:00 pm</span><span>Open now</span></dd>
+                <dd><span>8:00 am - 10:00 pm</span> <span styleName="biz-open">Open now</span></dd>
               </dl>
             </div>
           </li>
           <li>
-            <div></div>
-            <div>
+            <div styleName="li-item-icon">
+              <Icon name={'24x24_food'} />
+            </div>
+            <div styleName="li-underline li-description li-full-menu">
               <a href="#" styleName="menu-link">Full menu</a>
               <Icon name={`24x24_external_link`}/>
             </div>
           </li>
           <li>
-            <div></div>
-            <div>
+            <div styleName="li-item-icon">
+              <Icon name={'dollarsign_2'} />
+            </div>
+            <div styleName="li-underline li-description">
               <dl>
                 <dt>Price range</dt>
                 <dd>$11-30</dd>
@@ -39,8 +45,10 @@ class Summary extends Component {
             </div>
           </li>
           <li>
-            <div></div>
-            <div>
+            <div styleName="li-item-icon">
+              <Icon name={'24x24_medical'} />
+            </div>
+            <div styleName="li-description">
               <dl>
                 <dt><a styleName="health-score-link" href='#'>Health Score</a></dt>
                 <dd>77 out of 100</dd>

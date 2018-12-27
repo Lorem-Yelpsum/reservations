@@ -13,8 +13,8 @@ class Sidebar extends Component {
     return (
       <div id="sidebar">
         <Reservations />
-        <Hours />
         <Summary />
+        <Hours />
       </div>
     );
   }

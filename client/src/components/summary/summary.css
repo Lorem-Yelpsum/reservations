@@ -1,18 +1,42 @@
 .island-summary {
   border: 1px solid #e6e6e6;
   border-radius: 3px;
-  width: 20%;
+  height: 163px;
+  width: 300px;
+  margin: 17.5px;
+  font-size: 12px;
+  font-family: 'helvetica neue';
+  padding: 0;
+}
+
+.island-summary ul {
+  padding: 0 10px;
 }
 
 .island-summary li {
   list-style: none;
   display: flex;
   align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.li-description {
+  width: 100%;
+}
+
+.li-underline {
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.li-full-menu {
+  padding: 5px 0;
 }
 
 .menu-link, .health-score-link {
   text-decoration: none;
   color: #0073bb;
+  font-weight: 600;
 }
 
 .menu-link:hover, .health-score-link:hover {
@@ -20,6 +44,29 @@
   color: #0073bb;
 }
 
-.share-icon {
-  margin-right: 50px;
+dl {
+  white-space: nowrap;
+}
+
+dt {
+  float: left;
+  clear: left;
+  text-align: right;
+  margin-right: 5px;
+}
+
+dd {
+  font-weight: 600;
+}
+
+table span {
+  white-space: nowrap;
+}
+
+.li-item-icon {
+  margin-right: 10px;
+}
+
+.biz-open {
+  color: #41a700;
 }
