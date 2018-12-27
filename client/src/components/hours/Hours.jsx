@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
+import Icon from '../icons/Icon.jsx';
 import style from './hours.css';
 
 class Hours extends Component {
@@ -76,7 +77,7 @@ class Hours extends Component {
         </table>
 
         <div styleName="biz-info-link">
-          <span styleName="biz-pencil"><i className="fas fa-pencil-alt"></i></span>
+          <Icon name={`14x14_pencil`} />
           <a href='#' styleName="biz-link">Edit business info</a>
         </div>
       </div>

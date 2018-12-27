@@ -6,6 +6,8 @@
 
 .island-summary li {
   list-style: none;
+  display: flex;
+  align-items: center;
 }
 
 .menu-link, .health-score-link {
