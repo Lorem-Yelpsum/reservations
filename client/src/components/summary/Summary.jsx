@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
 import style from './summary.css';
+import Icon from '../icons/Icon.jsx';
 
 class Summary extends Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class Summary extends Component {
       <div styleName="island-summary">
         <ul>
           <li>
-            <div></div>
+            <Icon name={'24x24_clock'}/>
             <div>
               <dl>
                 <dt>Today</dt>
@@ -24,7 +25,8 @@ class Summary extends Component {
           <li>
             <div></div>
             <div>
-              <a href="#" styleName="menu-link">Full menu <i styleName="share-icon" className="fas fa-share-square"></i></a>
+              <a href="#" styleName="menu-link">Full menu</a>
+              <Icon name={`24x24_external_link`}/>
             </div>
           </li>
           <li>
