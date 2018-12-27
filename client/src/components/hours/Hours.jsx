@@ -19,7 +19,7 @@ class Hours extends Component {
             <tr>
               <th scope="row">Mon</th>
               <td>
-                <span>8:00 am</span> - <span>10:00 pm</span>
+                <span>8:00 am - 10:00 pm</span> <span>8:00 am - 10:00 pm</span>
               </td>
               <td>
                 <span styleName="open-now">Open now</span>
@@ -29,7 +29,7 @@ class Hours extends Component {
             <tr>
               <th scope="row">Tues</th>
               <td>
-              <span>8:00 am</span> - <span>10:00 pm</span>
+              <span>8:00 am - 10:00 pm</span>
               </td>
               <td></td>
             </tr>
@@ -37,7 +37,7 @@ class Hours extends Component {
             <tr>
               <th scope="row">Wed</th>
               <td>
-              <span>8:00 am</span> - <span>10:00 pm</span>
+              <span>8:00 am - 10:00 pm</span>
               </td>
               <td></td>
             </tr>
@@ -45,7 +45,7 @@ class Hours extends Component {
             <tr>
               <th scope="row">Thu</th>
               <td>
-              <span>8:00 am</span> - <span>10:00 pm</span>
+              <span>8:00 am - 10:00 pm</span>
               </td>
               <td></td>
             </tr>
@@ -53,7 +53,7 @@ class Hours extends Component {
             <tr>
               <th scope="row">Fri</th>
               <td>
-              <span>8:00 am</span> - <span>10:00 pm</span>
+              <span>8:00 am - 10:00 pm</span>
               </td>
               <td></td>
             </tr>
@@ -61,7 +61,7 @@ class Hours extends Component {
             <tr>
               <th scope="row">Sat</th>
               <td>
-              <span>8:00 am</span> - <span>10:00 pm</span>
+              <span>8:00 am - 10:00 pm</span>
               </td>
               <td></td>
             </tr>
@@ -69,7 +69,7 @@ class Hours extends Component {
             <tr>
               <th scope="row">Sun</th>
               <td>
-              <span>8:00 am</span> - <span>10:00 pm</span>
+              <span>8:00 am - 10:00 pm</span>
               </td>
               <td></td>
             </tr>

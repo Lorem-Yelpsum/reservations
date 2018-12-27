@@ -1,0 +1,99 @@
+.reservations-container {
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  max-width: 300px;
+  max-height: 165px;
+  margin: 17.5px;
+  padding: 5px 10px;
+  font-family: 'helvetica neue';
+}
+
+.reservations-container h3 {
+  display: flex;
+  margin-top: 6px;
+}
+
+.reservation-header-link {
+  text-decoration: none;
+  color: #333;
+  margin-left: 5px;
+}
+
+.reservation-header-link:hover {
+  text-decoration: underline;
+  color: #333;
+}
+
+.reservations-form-container {
+
+}
+
+.reservations-form-container input {
+  border: none;
+}
+
+.reservation-availability-form {
+
+}
+
+.reservation-fields {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.find-table-button {
+  width: 100%;
+  padding: 7px 0;
+  border-radius: 3px;
+  background-color: #41a700;
+  color: white;
+  font-weight: 600;
+}
+
+.calendar-popup {}
+
+.hidden-cal {}
+
+.date-picker {
+  flex: 0 1 100%;
+  margin-bottom: 5px;
+}
+
+.time-picker {
+  flex: 1 0 47.5%;
+  margin-right: 5px;
+}
+
+.people-picker {
+  flex: 1 0 47.5%;
+}
+
+.date-input {}
+
+.yselect {
+  border: 1px solid #e6e6e6;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+}
+
+.yselect input {
+  width: 250px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+.yselect select {
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: white;
+  height: 30px;
+  width: 100px;
+  margin-left: 10px;
+}
+

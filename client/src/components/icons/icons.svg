@@ -9,8 +9,8 @@
     <symbol id="18x18_clock" height="18" viewBox="0 0 18 18" width="18">
       <path d="M9 17A8 8 0 1 1 9 1a8 8 0 0 1 0 16zM9 2C5.14 2 2 5.14 2 9s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7zm3.223 10.098a.998.998 0 0 1-.588-.192L8 9.256V5a1 1 0 0 1 2 0v3.24l2.812 2.05a1 1 0 0 1-.59 1.808z"></path>
     </symbol>
-    <symbol id="14x14_arrow_down" height="14" viewBox="0 0 14 14" width="14">
-      <path d="M12 6l-4.996 6L2 6h3V3h4v3h3z"></path>
+    <symbol id="14x14_triangle_down" height="14" viewBox="0 0 14 14" width="14">
+      <path d="M7 9L3.5 5h7L7 9z"></path>
     </symbol>
     <symbol id="18x18_friends" height="18" viewBox="0 0 18 18" width="18">
       <g>
