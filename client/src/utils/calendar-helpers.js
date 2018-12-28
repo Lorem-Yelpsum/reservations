@@ -25,12 +25,12 @@ const calculateMonthEntry = (indexOfFirstDay, indexOfLastDay, totalWeeks, collec
     if (weekCount === 0) {
       for (let weekIndex = 0; weekIndex <= 6; weekIndex++) {
         (indexOfFirstDay > weekIndex) ? 
-          week.push(0) :  week = week.concat(collectionOfDays.splice(0, 1));
+          week.push(null) :  week = week.concat(collectionOfDays.splice(0, 1));
       }
     } else if (weekCount === totalWeeks - 1) {
       for (let weekIndex = 0; weekIndex <= 6; weekIndex++) {
         (indexOfLastDay >= weekIndex) ? 
-          week = week.concat(collectionOfDays.splice(0, 1)) : week.push(0);
+          week = week.concat(collectionOfDays.splice(0, 1)) : week.push(null);
       }
     } else {
       week = week.concat(collectionOfDays.splice(0, 7));

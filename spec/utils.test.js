@@ -18,12 +18,12 @@ const utils = require('../client/src/utils/calendar-helpers.js');
   
     test('creates valid 2D array of calendar months of 31 days starting and ending on given weekdays', () => {
       const MonthStartingOnASatWith31Days = [
-        [ 0, 0, 0, 0, 0, 0, 1 ],
+        [ null, null, null, null, null, null, 1 ],
         [ 2, 3, 4, 5, 6, 7, 8 ],
         [ 9, 10, 11, 12, 13, 14, 15 ],
         [ 16, 17, 18, 19, 20, 21, 22 ],
         [ 23, 24, 25, 26, 27, 28, 29 ],
-        [ 30, 31, 0, 0, 0, 0, 0 ]
+        [ 30, 31, null, null, null, null, null ]
       ];
     
       const MonthStartingOnASunWith31Days = [
@@ -31,15 +31,15 @@ const utils = require('../client/src/utils/calendar-helpers.js');
         [ 8, 9, 10, 11, 12, 13, 14 ],
         [ 15, 16, 17, 18, 19, 20, 21 ],
         [ 22, 23, 24, 25, 26, 27, 28 ],
-        [ 29, 30, 31, 0, 0, 0, 0 ]
+        [ 29, 30, 31, null, null, null, null ]
       ];
     
       const MonthStartingOnAWedWith31Days = [
-        [ 0, 0, 0, 1, 2, 3, 4 ],
+        [ null, null, null, 1, 2, 3, 4 ],
         [ 5, 6, 7, 8, 9, 10, 11 ],
         [ 12, 13, 14, 15, 16, 17, 18 ],
         [ 19, 20, 21, 22, 23, 24, 25 ],
-        [ 26, 27, 28, 29, 30, 31, 0 ]
+        [ 26, 27, 28, 29, 30, 31, null ]
       ];
 
       expect(utils.calculateMonthEntry(6, 1, 6, Array.from(new Array(31), (val, index) => index + 1))).toEqual(MonthStartingOnASatWith31Days);
@@ -49,12 +49,12 @@ const utils = require('../client/src/utils/calendar-helpers.js');
 
     test('creates valid 2D array of calendar months of 30 days starting and ending on given weekdays', () => {
       const MonthStartingOnASatWith30Days = [
-        [ 0, 0, 0, 0, 0, 0, 1 ],
+        [ null, null, null, null, null, null, 1 ],
         [ 2, 3, 4, 5, 6, 7, 8 ],
         [ 9, 10, 11, 12, 13, 14, 15 ],
         [ 16, 17, 18, 19, 20, 21, 22 ],
         [ 23, 24, 25, 26, 27, 28, 29 ],
-        [ 30, 0, 0, 0, 0, 0, 0 ]
+        [ 30, null, null, null, null, null, null ]
       ];
     
       const MonthStartingOnASunWith30Days = [
@@ -62,15 +62,15 @@ const utils = require('../client/src/utils/calendar-helpers.js');
         [ 8, 9, 10, 11, 12, 13, 14 ],
         [ 15, 16, 17, 18, 19, 20, 21 ],
         [ 22, 23, 24, 25, 26, 27, 28 ],
-        [ 29, 30, 0, 0, 0, 0, 0 ]
+        [ 29, 30, null, null, null, null, null ]
       ];
     
       const MonthStartingOnAWedWith30Days = [
-        [ 0, 0, 0, 1, 2, 3, 4 ],
+        [ null, null, null, 1, 2, 3, 4 ],
         [ 5, 6, 7, 8, 9, 10, 11 ],
         [ 12, 13, 14, 15, 16, 17, 18 ],
         [ 19, 20, 21, 22, 23, 24, 25 ],
-        [ 26, 27, 28, 29, 30, 0, 0 ]
+        [ 26, 27, 28, 29, 30, null, null ]
       ];
 
       expect(utils.calculateMonthEntry(6, 0, 6, Array.from(new Array(30), (val, index) => index + 1))).toEqual(MonthStartingOnASatWith30Days);
@@ -80,7 +80,7 @@ const utils = require('../client/src/utils/calendar-helpers.js');
 
     test('creates valid 2D array of calendar months of 29 days starting and ending on given weekdays', () => {
       const MonthStartingOnASatWith29Days = [
-        [ 0, 0, 0, 0, 0, 0, 1 ],
+        [ null, null, null, null, null, null, 1 ],
         [ 2, 3, 4, 5, 6, 7, 8 ],
         [ 9, 10, 11, 12, 13, 14, 15 ],
         [ 16, 17, 18, 19, 20, 21, 22 ],
@@ -92,15 +92,15 @@ const utils = require('../client/src/utils/calendar-helpers.js');
         [ 8, 9, 10, 11, 12, 13, 14 ],
         [ 15, 16, 17, 18, 19, 20, 21 ],
         [ 22, 23, 24, 25, 26, 27, 28 ],
-        [ 29, 0, 0, 0, 0, 0, 0 ]
+        [ 29, null, null, null, null, null, null ]
       ];
     
       const MonthStartingOnAWedWith29Days = [
-        [ 0, 0, 0, 1, 2, 3, 4 ],
+        [ null, null, null, 1, 2, 3, 4 ],
         [ 5, 6, 7, 8, 9, 10, 11 ],
         [ 12, 13, 14, 15, 16, 17, 18 ],
         [ 19, 20, 21, 22, 23, 24, 25 ],
-        [ 26, 27, 28, 29, 0, 0, 0 ]
+        [ 26, 27, 28, 29, null, null, null ]
       ];
   
       expect(utils.calculateMonthEntry(6, 6, 5, Array.from(new Array(29), (val, index) => index + 1))).toEqual(MonthStartingOnASatWith29Days);
@@ -110,11 +110,11 @@ const utils = require('../client/src/utils/calendar-helpers.js');
     
     test('creates valid 2D array of calendar months of 28 days starting and ending on given weekdays', () => {
       const MonthStartingOnASatWith28Days = [
-        [ 0, 0, 0, 0, 0, 0, 1 ],
+        [ null, null, null, null, null, null, 1 ],
         [ 2, 3, 4, 5, 6, 7, 8 ],
         [ 9, 10, 11, 12, 13, 14, 15 ],
         [ 16, 17, 18, 19, 20, 21, 22 ],
-        [ 23, 24, 25, 26, 27, 28, 0 ]
+        [ 23, 24, 25, 26, 27, 28, null ]
       ];
     
       const MonthStartingOnASunWith28Days = [
@@ -125,11 +125,11 @@ const utils = require('../client/src/utils/calendar-helpers.js');
       ];
     
       const MonthStartingOnAWedWith28Days = [
-        [ 0, 0, 0, 1, 2, 3, 4 ],
+        [ null, null, null, 1, 2, 3, 4 ],
         [ 5, 6, 7, 8, 9, 10, 11 ],
         [ 12, 13, 14, 15, 16, 17, 18 ],
         [ 19, 20, 21, 22, 23, 24, 25 ],
-        [ 26, 27, 28, 0, 0, 0, 0 ]
+        [ 26, 27, 28, null, null, null, null ]
       ];
   
       expect(utils.calculateMonthEntry(6, 5, 5, Array.from(new Array(28), (val, index) => index + 1))).toEqual(MonthStartingOnASatWith28Days);
@@ -148,45 +148,45 @@ const utils = require('../client/src/utils/calendar-helpers.js');
 
     test('returns valid 2D array of calendar month from given month index and year', () => {
       const December2018 = [
-        [ 0, 0, 0, 0, 0, 0, 1 ],
+        [ null, null, null, null, null, null, 1 ],
         [ 2, 3, 4, 5, 6, 7, 8 ],
         [ 9, 10, 11, 12, 13, 14, 15 ],
         [ 16, 17, 18, 19, 20, 21, 22 ],
         [ 23, 24, 25, 26, 27, 28, 29 ],
-        [ 30, 31, 0, 0, 0, 0, 0 ] 
+        [ 30, 31, null, null, null, null, null ] 
       ];
 
       const November2018 = [ 
-        [ 0, 0, 0, 0, 1, 2, 3 ],
+        [ null, null, null, null, 1, 2, 3 ],
         [ 4, 5, 6, 7, 8, 9, 10 ],
         [ 11, 12, 13, 14, 15, 16, 17 ],
         [ 18, 19, 20, 21, 22, 23, 24 ],
-        [ 25, 26, 27, 28, 29, 30, 0 ] 
+        [ 25, 26, 27, 28, 29, 30, null ] 
       ];
 
       const October2018 = [ 
-        [ 0, 1, 2, 3, 4, 5, 6 ],
+        [ null, 1, 2, 3, 4, 5, 6 ],
         [ 7, 8, 9, 10, 11, 12, 13 ],
         [ 14, 15, 16, 17, 18, 19, 20 ],
         [ 21, 22, 23, 24, 25, 26, 27 ],
-        [ 28, 29, 30, 31, 0, 0, 0 ] 
+        [ 28, 29, 30, 31, null, null, null ] 
       ];
 
       const September2018 = [ 
-        [ 0, 0, 0, 0, 0, 0, 1 ],
+        [ null, null, null, null, null, null, 1 ],
         [ 2, 3, 4, 5, 6, 7, 8 ],
         [ 9, 10, 11, 12, 13, 14, 15 ],
         [ 16, 17, 18, 19, 20, 21, 22 ],
         [ 23, 24, 25, 26, 27, 28, 29 ],
-        [ 30, 0, 0, 0, 0, 0, 0 ] 
+        [ 30, null, null, null, null, null, null ] 
       ];
 
       const August2018 = [ 
-        [ 0, 0, 0, 1, 2, 3, 4 ],
+        [ null, null, null, 1, 2, 3, 4 ],
         [ 5, 6, 7, 8, 9, 10, 11 ],
         [ 12, 13, 14, 15, 16, 17, 18 ],
         [ 19, 20, 21, 22, 23, 24, 25 ],
-        [ 26, 27, 28, 29, 30, 31, 0 ] 
+        [ 26, 27, 28, 29, 30, 31, null ] 
       ];
 
       const July2018 = [ 
@@ -194,11 +194,11 @@ const utils = require('../client/src/utils/calendar-helpers.js');
         [ 8, 9, 10, 11, 12, 13, 14 ],
         [ 15, 16, 17, 18, 19, 20, 21 ],
         [ 22, 23, 24, 25, 26, 27, 28 ],
-        [ 29, 30, 31, 0, 0, 0, 0 ] 
+        [ 29, 30, 31, null, null, null, null ] 
       ];
 
       const June2018 = [ 
-        [ 0, 0, 0, 0, 0, 1, 2 ],
+        [ null, null, null, null, null, 1, 2 ],
         [ 3, 4, 5, 6, 7, 8, 9 ],
         [ 10, 11, 12, 13, 14, 15, 16 ],
         [ 17, 18, 19, 20, 21, 22, 23 ],
@@ -206,11 +206,11 @@ const utils = require('../client/src/utils/calendar-helpers.js');
       ];
 
       const May2018 = [ 
-        [ 0, 0, 1, 2, 3, 4, 5 ],
+        [ null, null, 1, 2, 3, 4, 5 ],
         [ 6, 7, 8, 9, 10, 11, 12 ],
         [ 13, 14, 15, 16, 17, 18, 19 ],
         [ 20, 21, 22, 23, 24, 25, 26 ],
-        [ 27, 28, 29, 30, 31, 0, 0 ] 
+        [ 27, 28, 29, 30, 31, null, null ] 
       ];
 
       const April2018 = [ 
@@ -218,11 +218,11 @@ const utils = require('../client/src/utils/calendar-helpers.js');
         [ 8, 9, 10, 11, 12, 13, 14 ],
         [ 15, 16, 17, 18, 19, 20, 21 ],
         [ 22, 23, 24, 25, 26, 27, 28 ],
-        [ 29, 30, 0, 0, 0, 0, 0 ] 
+        [ 29, 30, null, null, null, null, null ] 
       ];
 
       const March2018 = [
-        [ 0, 0, 0, 0, 1, 2, 3 ],
+        [ null, null, null, null, 1, 2, 3 ],
         [ 4, 5, 6, 7, 8, 9, 10 ],
         [ 11, 12, 13, 14, 15, 16, 17 ],
         [ 18, 19, 20, 21, 22, 23, 24 ],
@@ -230,19 +230,19 @@ const utils = require('../client/src/utils/calendar-helpers.js');
       ];
 
       const February2018 = [ 
-        [ 0, 0, 0, 0, 1, 2, 3 ],
+        [ null, null, null, null, 1, 2, 3 ],
         [ 4, 5, 6, 7, 8, 9, 10 ],
         [ 11, 12, 13, 14, 15, 16, 17 ],
         [ 18, 19, 20, 21, 22, 23, 24 ],
-        [ 25, 26, 27, 28, 0, 0, 0 ] 
+        [ 25, 26, 27, 28, null, null, null ] 
       ];
 
       const January2018 = [ 
-        [ 0, 1, 2, 3, 4, 5, 6 ],
+        [ null, 1, 2, 3, 4, 5, 6 ],
         [ 7, 8, 9, 10, 11, 12, 13 ],
         [ 14, 15, 16, 17, 18, 19, 20 ],
         [ 21, 22, 23, 24, 25, 26, 27 ],
-        [ 28, 29, 30, 31, 0, 0, 0 ] 
+        [ 28, 29, 30, 31, null, null, null ] 
       ];
 
       expect(utils.generateCalendarMonth(11, 2018)).toEqual(December2018);
@@ -261,23 +261,23 @@ const utils = require('../client/src/utils/calendar-helpers.js');
 
     test('returns valid 2D array of february month if leap year exists', () => {
       const leapYear2012 = [ 
-        [ 0, 0, 0, 1, 2, 3, 4 ],
+        [ null, null, null, 1, 2, 3, 4 ],
         [ 5, 6, 7, 8, 9, 10, 11 ],
         [ 12, 13, 14, 15, 16, 17, 18 ],
         [ 19, 20, 21, 22, 23, 24, 25 ],
-        [ 26, 27, 28, 29, 0, 0, 0 ] 
+        [ 26, 27, 28, 29, null, null, null ] 
       ];
 
       const leapYear2016 = [ 
-        [ 0, 1, 2, 3, 4, 5, 6 ],
+        [ null, 1, 2, 3, 4, 5, 6 ],
         [ 7, 8, 9, 10, 11, 12, 13 ],
         [ 14, 15, 16, 17, 18, 19, 20 ],
         [ 21, 22, 23, 24, 25, 26, 27 ],
-        [ 28, 29, 0, 0, 0, 0, 0 ]
+        [ 28, 29, null, null, null, null, null ]
       ];
 
       const leapYear2020 = [
-        [ 0, 0, 0, 0, 0, 0, 1 ],
+        [ null, null, null, null, null, null, 1 ],
         [ 2, 3, 4, 5, 6, 7, 8 ],
         [ 9, 10, 11, 12, 13, 14, 15 ],
         [ 16, 17, 18, 19, 20, 21, 22 ],
@@ -285,19 +285,19 @@ const utils = require('../client/src/utils/calendar-helpers.js');
       ];
 
       const leapYear2024 = [
-        [ 0, 0, 0, 0, 1, 2, 3 ],
+        [ null, null, null, null, 1, 2, 3 ],
         [ 4, 5, 6, 7, 8, 9, 10 ],
         [ 11, 12, 13, 14, 15, 16, 17 ],
         [ 18, 19, 20, 21, 22, 23, 24 ],
-        [ 25, 26, 27, 28, 29, 0, 0 ]
+        [ 25, 26, 27, 28, 29, null, null ]
       ];
 
       const leapYear2028 = [
-        [ 0, 0, 1, 2, 3, 4, 5 ],
+        [ null, null, 1, 2, 3, 4, 5 ],
         [ 6, 7, 8, 9, 10, 11, 12 ],
         [ 13, 14, 15, 16, 17, 18, 19 ],
         [ 20, 21, 22, 23, 24, 25, 26 ],
-        [ 27, 28, 29, 0, 0, 0, 0 ]
+        [ 27, 28, 29, null, null, null, null ]
       ];
 
       const leapYear2032 = [
@@ -305,7 +305,7 @@ const utils = require('../client/src/utils/calendar-helpers.js');
         [ 8, 9, 10, 11, 12, 13, 14 ],
         [ 15, 16, 17, 18, 19, 20, 21 ],
         [ 22, 23, 24, 25, 26, 27, 28 ],
-        [ 29, 0, 0, 0, 0, 0, 0 ]
+        [ 29, null, null, null, null, null, null ]
       ];
 
       expect(utils.generateCalendarMonth(1, 2012)).toEqual(leapYear2012);
@@ -317,11 +317,4 @@ const utils = require('../client/src/utils/calendar-helpers.js');
 
     });
   });
-
-    
-
-    
-
-
-
-
+  
