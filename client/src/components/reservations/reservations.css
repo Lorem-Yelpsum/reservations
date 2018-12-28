@@ -1,16 +1,17 @@
 .reservations-container {
   border: 1px solid #e6e6e6;
   border-radius: 3px;
-  max-width: 300px;
-  max-height: 165px;
+  max-width: 276px;
+  max-height: 139px;
   margin: 17.5px;
-  padding: 5px 10px;
+  padding: 14px 11px 11px;
   font-family: 'helvetica neue';
+  z-index: 1;
 }
 
 .reservations-container h3 {
   display: flex;
-  margin-top: 6px;
+  margin: 0
 }
 
 .reservation-header-link {
@@ -44,18 +45,13 @@
   flex-wrap: wrap;
 }
 
-.find-table-button {
-  width: 100%;
-  padding: 7px 0;
-  border-radius: 3px;
-  background-color: #41a700;
-  color: white;
-  font-weight: 600;
-}
+
 
 .calendar-popup {}
 
 .hidden-cal {}
+
+.date-input {}
 
 .date-picker {
   flex: 0 1 100%;
@@ -71,8 +67,6 @@
   flex: 1 0 47.5%;
 }
 
-.date-input {}
-
 .yselect {
   border: 1px solid #e6e6e6;
   border-radius: 3px;
@@ -82,8 +76,8 @@
 }
 
 .yselect input {
-  width: 250px;
-  height: 30px;
+  width: 230px;
+  height: 20px;
   margin-left: 10px;
 }
 
@@ -92,8 +86,33 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   background-color: white;
-  height: 30px;
-  width: 100px;
+  height: 20px;
+  width: 90px;
   margin-left: 10px;
+}
+
+select:focus, input:focus {
+  outline: none;
+}
+
+.yselect:focus-within {
+  border: 2px solid #0073bb;
+}
+
+.find-table-button {
+  width: 100%;
+  padding: 5px 0;
+  border-radius: 3px;
+  background-color: #41a700;
+  color: white;
+  font-weight: 600;
+}
+
+.find-table-button:focus {
+  outline: none;
+}
+
+.find-table-button:hover {
+  background-color: #67b933;
 }
 
