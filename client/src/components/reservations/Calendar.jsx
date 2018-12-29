@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
 import style from './calendar.css';
+import utils from '../../utils/calendar-helpers.js';
 
 import CalendarWeek from './CalendarWeek.jsx';
 
@@ -13,8 +14,8 @@ class Calendar extends Component {
   render() {
 
     const calendarDisplay = this.props.calendarDisplay ? 'calendar' : 'calendar-hidden';
-    const calendarMonth = this.props.calendarMonth.map( week => {
-      return <CalendarWeek week={week} testFunc={this.props.testFunc}/>
+    const calendar = this.props.calendar.map( week => {
+      return <CalendarWeek week={week} />
     });
 
     return (
@@ -22,9 +23,9 @@ class Calendar extends Component {
         <table>
           <thead>
           <tr>
-            <td colSpan="1">«</td>
-            <td colSpan="5" styleName="monthYear">December 2018</td>
-            <td colSpan="1">»</td>
+            <td colSpan="1" styleName="month-change-cell" onClick={this.props.handlePrevMonth}>«</td>
+            <td colSpan="5" styleName="monthYear">{`${utils.monthByIndex[this.props.currMonth]} ${this.props.currYear}`}</td>
+            <td colSpan="1" styleName="month-change-cell" onClick={this.props.handleNextMonth}>»</td>
           </tr>
           </thead>
           <tbody>
@@ -37,7 +38,7 @@ class Calendar extends Component {
               <th>F</th>
               <th>S</th>
             </tr>
-            {calendarMonth}
+            {calendar}
           </tbody>
         </table>
       </div>

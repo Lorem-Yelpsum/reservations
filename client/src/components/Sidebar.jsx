@@ -1,23 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Reservations from './reservations/Reservations.jsx';
 import Hours from './hours/Hours.jsx';
 import Summary from './summary/Summary.jsx';
 
-class Sidebar extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {}
-  }
-
-  render() {
-    return (
-      <div id="sidebar">
-        <Reservations />
-        <Summary />
-        <Hours />
-      </div>
-    );
-  }
-}
+const Sidebar = () => (
+    <div id="sidebar">
+      <Reservations />
+      <Summary />
+      <Hours />
+    </div>
+  );
 
 export default Sidebar;

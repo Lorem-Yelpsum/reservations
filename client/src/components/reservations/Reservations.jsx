@@ -12,18 +12,27 @@ class Reservations extends Component {
     super(props)
     this.state = {
       today: new Date(),
+      currMonth: null,
+      currYear: null,
       calendar: [],
-      calendarDisplay: false
+      calendarDisplay: false,
+      dateSelected: null,
+      timeSelected: null,
+      partySelected: null,
     }
 
     this.calendarToggle = this.calendarToggle.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.handlePrevMonth = this.handlePrevMonth.bind(this);
+    this.handleNextMonth = this.handleNextMonth.bind(this);
+    this.handleCalendarClose = this.handleCalendarClose.bind(this);
   }
 
   componentDidMount() {
     let calendarMonth = utils.generateCalendarMonth(this.state.today.getMonth(), this.state.today.getFullYear());
     this.setState({
+      currMonth: this.state.today.getMonth(),
+      currYear: this.state.today.getFullYear(),
       calendar: calendarMonth
     });
   }
@@ -41,9 +50,42 @@ class Reservations extends Component {
     console.log('hi');
   }
 
-  handleClick(e) {
-    e.preventDefault();
-    console.log('bye');
+  handlePrevMonth(e) {
+    e.stopPropagation();
+
+    let month = this.state.currMonth === 0 ? 11 : this.state.currMonth - 1;
+    let year = month === 11 ? this.state.currYear - 1 : this.state.currYear;
+    let calendarMonth = utils.generateCalendarMonth(month, year);
+
+    this.setState({
+      currMonth: month,
+      currYear: year,
+      calendar: calendarMonth
+    });
+  }
+
+  handleNextMonth(e) {
+    e.stopPropagation();
+
+    let month = this.state.currMonth === 11 ? 0 : this.state.currMonth + 1;
+    let year = month === 0 ? this.state.currYear + 1 : this.state.currYear;
+    let calendarMonth = utils.generateCalendarMonth(month, year);
+
+    this.setState({
+      currMonth: month,
+      currYear: year,
+      calendar: calendarMonth
+    });
+  }
+
+  handleCalendarClose() {
+    if (this.state.calendarDisplay) {
+      this.setState(prevState => {
+        return {
+          calendarDisplay: false
+        }
+      });
+    }
   }
 
   render() {
@@ -59,11 +101,17 @@ class Reservations extends Component {
               <li styleName="date-picker">
                 <div styleName="yselect">
                   <Icon name={'18x18_reservation'} />
-                  <input styleName="date-input" name="reservation_datetime_date" type="text" value="Thursday, December 27, 2018" onFocus={this.calendarToggle} onBlur={this.calendarToggle} readOnly/>
+                  <input styleName="date-input" name="reservation_datetime_date" type="text" value="Thursday, December 27, 2018" onClick={this.calendarToggle} readOnly/>
                   <Icon name={'14x14_triangle_down'} />
                 </div>
                 <div styleName="calendar-popup hidden-cal">
-                  <Calendar calendarMonth={this.state.calendar} calendarDisplay={this.state.calendarDisplay} testFunc={this.handleClick}/>
+                  <Calendar 
+                    calendar={this.state.calendar} 
+                    calendarDisplay={this.state.calendarDisplay}
+                    currMonth={this.state.currMonth}
+                    currYear={this.state.currYear}
+                    handlePrevMonth={this.handlePrevMonth} 
+                    handleNextMonth={this.handleNextMonth} />
                 </div>
               </li>
               <li styleName="time-picker">
