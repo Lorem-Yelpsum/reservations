@@ -44,4 +44,8 @@
   font-weight: 600;
 }
 
+.month-change-cell {
+  cursor: pointer;
+}
+
 

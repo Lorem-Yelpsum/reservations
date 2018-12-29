@@ -5,7 +5,7 @@ import style from './calendarDay.css';
 const CalendarDay = (props) => {
   let entryStatus= "test";
   return (
-    <td styleName={entryStatus} onClick={props.testFunc}>{props.value}</td>
+    <td styleName={entryStatus}>{props.value}</td>
   );
 }
 
