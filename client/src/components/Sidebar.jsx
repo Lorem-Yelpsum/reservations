@@ -12,7 +12,8 @@ class Sidebar extends Component {
   }
 
   componentDidMount() {
-    fetch('/restaurant/:rest_id').then(response => {
+    const rest_id = window.rest_id;
+    fetch('/restaurant/rest_id').then(response => {
       return response.json();
     }).then(results => {
       console.log(results);
