@@ -1,7 +1,34 @@
-.test {
-  
+.date-disabled {
+  color: #e6e6e6;
 }
 
-.test:hover {
-  background-color: #e6e6e6;
+.date-disabled:hover {
+  cursor: not-allowed;
+}
+
+.date-enabled {
+  color: #333;
+}
+
+.date-enabled:hover,
+.date-null:hover {
+  background-color: #cddae2;
+  cursor: pointer;
+}
+
+.date-today {
+  color: #333;
+  font-weight: bold;
+}
+
+.date-selected {
+  background: rgba(207,18,0,0.8);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.date-selected:hover {
+  background:  rgba(207,18,0,0.8);
+  box-shadow: inset 0 0 2px rgba(0,0,0,0.4);
 }

@@ -12,20 +12,26 @@ class Calendar extends Component {
   }
 
   render() {
+    let {calendar, calendarDisplay, currMonth, currYear, dateSelected, handleNextMonth, handlePrevMonth, handleDatePicker} = this.props;
 
-    const calendarDisplay = this.props.calendarDisplay ? 'calendar' : 'calendar-hidden';
-    const calendar = this.props.calendar.map( week => {
-      return <CalendarWeek week={week} />
+    const calendarMonth = calendar.map( week => {
+      return <CalendarWeek 
+              week={week} 
+              currMonth={currMonth} 
+              currYear={currYear} 
+              handleDatePicker={handleDatePicker}
+              dateSelected={dateSelected}
+              />
     });
 
     return (
-      <div styleName={calendarDisplay}>
+      <div styleName={calendarDisplay ? 'calendar' : 'calendar-hidden'}>
         <table>
           <thead>
           <tr>
-            <td colSpan="1" styleName="month-change-cell" onClick={this.props.handlePrevMonth}>«</td>
-            <td colSpan="5" styleName="monthYear">{`${utils.monthByIndex[this.props.currMonth]} ${this.props.currYear}`}</td>
-            <td colSpan="1" styleName="month-change-cell" onClick={this.props.handleNextMonth}>»</td>
+            <td colSpan="1" styleName="month-change-cell" onClick={handlePrevMonth}>«</td>
+            <td colSpan="5" styleName="monthYear">{`${utils.monthByIndex[currMonth]} ${currYear}`}</td>
+            <td colSpan="1" styleName="month-change-cell" onClick={handleNextMonth}>»</td>
           </tr>
           </thead>
           <tbody>
@@ -38,7 +44,7 @@ class Calendar extends Component {
               <th>F</th>
               <th>S</th>
             </tr>
-            {calendar}
+            {calendarMonth}
           </tbody>
         </table>
       </div>
