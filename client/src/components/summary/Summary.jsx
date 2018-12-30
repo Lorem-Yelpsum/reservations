@@ -3,15 +3,16 @@ import CSSModules from 'react-css-modules';
 import style from './summary.css';
 import Icon from '../icons/Icon.jsx';
 
-class Summary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
+const Summary = ({price_range, health_score}) => {
+  let price_scale = {
+    'Under $10': 'dollarsign_1',
+    '$11-30': 'dollarsign_2',
+    '$31-60': 'dollarsign_3',
+    'Above $61': 'dollarsign_4'
   }
 
-  render() {
-    return (
-      <div styleName="island-summary">
+  return (
+    <div styleName="island-summary">
         <ul>
           <li>
             <div styleName="li-item-icon">
@@ -35,12 +36,12 @@ class Summary extends Component {
           </li>
           <li>
             <div styleName="li-item-icon">
-              <Icon name={'dollarsign_2'} />
+              <Icon name={`${price_scale[price_range]}`} />
             </div>
             <div styleName="li-underline li-description">
               <dl>
                 <dt>Price range</dt>
-                <dd>$11-30</dd>
+                <dd>{price_range}</dd>
               </dl>
             </div>
           </li>
@@ -51,14 +52,13 @@ class Summary extends Component {
             <div styleName="li-description">
               <dl>
                 <dt><a styleName="health-score-link" href='#'>Health Score</a></dt>
-                <dd>77 out of 100</dd>
+                <dd>{`${health_score} out of 100`}</dd>
               </dl>
             </div>
           </li>
         </ul>
       </div>
-    );
-  }
+  );
 }
 
 export default CSSModules(Summary, style, {allowMultiple: true});

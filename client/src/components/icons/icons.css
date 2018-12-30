@@ -1,7 +1,3 @@
-.icon {
-  
-}
-
 .icon-24x24_reservation {
   fill: #333;
   height: 25px;
@@ -62,7 +58,8 @@
 }
 
 .icon-dollarsign_1 {
-
+  width: 20px;
+  height: 20px;
 }
 
 .icon-dollarsign_2 {
@@ -71,11 +68,13 @@
 }
 
 .icon-dollarsign_3 {
-
+  width: 20px;
+  height: 20px;
 }
 
 .icon-dollarsign_4 {
-
+  width: 20px;
+  height: 20px;
 }
 
 .icon-24x24_external_link {
@@ -89,4 +88,7 @@
   width: 12px;
 }
 
+.icon-undefined {
+  outline: 5px solid #369;
+}
 

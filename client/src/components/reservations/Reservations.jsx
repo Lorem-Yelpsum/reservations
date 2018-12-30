@@ -84,6 +84,8 @@ class Reservations extends Component {
   }
 
   render() {
+    let {days_open} = this.props;
+
     return (
       <div styleName="reservations-container">
         <h3>
@@ -115,6 +117,7 @@ class Reservations extends Component {
                     handlePrevMonth={this.handlePrevMonth} 
                     handleNextMonth={this.handleNextMonth} 
                     handleDatePicker={this.handleDatePicker}
+                    days_open={days_open}
                     />
                 </div>
               </li>

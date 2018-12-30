@@ -4,7 +4,7 @@ import style from './icons.css';
 import './icons.svg';
 
 const Icon = (props) => (
-  <svg styleName={`icon icon-${props.name}`}>
+  <svg styleName={`icon-${props.name}`}>
     <use xlinkHref={`#icons_${props.name}`} />
   </svg>
 )
