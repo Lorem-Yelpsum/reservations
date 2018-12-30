@@ -28,6 +28,16 @@ const monthByIndex = {
   11: 'December'
 };
 
+const dayByIndex = {
+  0: 'Sunday',
+  1: 'Monday',
+  2: 'Tuesday',
+  3: 'Wednesday',
+  4: 'Thursday',
+  5: 'Friday',
+  6: 'Saturday'
+}
+
 const checkLeapYear = (year) => {
   return new Date(year, 1, 29).getDate() === 29;
 };
@@ -80,9 +90,50 @@ const generateCalendarMonth = (monthIndex, year) => {
   return null;
 };
 
+const calculateDateTo = (dateFrom) => {
+  let dateTo = new Date(dateFrom.getFullYear(), dateFrom.getMonth(), dateFrom.getDate() + 61);
+  return dateTo;
+}
+const formatDate = (date) => {
+  if (date instanceof Date) {
+    let month = date.getMonth();
+    let day = date.getDate();
+    let year = date.getFullYear();
+    
+    return `${month + 1}/${day}/${year}`;
+  }
+
+	return null;
+}
+
+const checkWithinDateRange = (c, d1, d2) => {
+  let checkDate = new Date(c.getFullYear(), c.getMonth(), c.getDate());
+  let from = new Date(d1.getFullYear(), d1.getMonth(), d1.getDate());
+  let to = new Date(d2.getFullYear(), d2.getMonth(), d2.getDate());
+  
+  return from <= checkDate && checkDate <= to;
+}
+
+const formatDateInputValue = (date) => {
+  return `${dayByIndex[date.getDay()]}, ${monthByIndex[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+}
+
+const compareTwoDates = (d1, d2) => {
+  return new Date(d1.getFullYear(), d1.getMonth(), d1.getDate())
+            .toDateString() === 
+            new Date(d2.getFullYear(), d2.getMonth(), d2.getDate())
+            .toDateString();
+}
+
+
 module.exports = {
   checkLeapYear,
   calculateMonthEntry,
   generateCalendarMonth,
-  monthByIndex
+  monthByIndex,
+  calculateDateTo,
+  formatDate,
+  checkWithinDateRange,
+  formatDateInputValue,
+  compareTwoDates
 };
