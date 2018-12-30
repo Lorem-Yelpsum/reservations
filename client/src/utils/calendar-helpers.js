@@ -114,6 +114,13 @@ const compareTwoDates = (d1, d2) => {
   return d1.toLocaleDateString() === d2.toLocaleDateString();
 }
 
+const compareDateToDaysOpen = (days_open, date) => {
+  if (Object.keys(days_open).length) {
+    return days_open[date.getDay()];
+  }
+  return false;
+}
+
 module.exports = {
   checkLeapYear,
   calculateMonthEntry,
@@ -123,5 +130,6 @@ module.exports = {
   formatDate,
   checkWithinDateRange,
   formatDateInputValue,
-  compareTwoDates
+  compareTwoDates,
+  compareDateToDaysOpen
 };

@@ -5,15 +5,16 @@ import utils from '../../utils/calendar-helpers.js';
 import CalendarWeek from './CalendarWeek.jsx';
 
 const Calendar = (props) => {
-  let {calendar, calendarDisplay, currMonth, currYear, dateSelected, handleNextMonth, handlePrevMonth, handleDatePicker} = props;
+  let {calendar, calendarDisplay, currMonth, currYear, dateSelected, handleNextMonth, handlePrevMonth, handleDatePicker, days_open} = props;
 
-  const calendarMonth = calendar.map( (week, index) => {
+  const calendarMonth = calendar.map((week, index) => {
     return <CalendarWeek 
             week={week} 
             currMonth={currMonth} 
             currYear={currYear} 
             handleDatePicker={handleDatePicker}
             dateSelected={dateSelected}
+            days_open={days_open}
             key={index}
             />
   });
