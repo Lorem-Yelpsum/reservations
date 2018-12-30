@@ -21,10 +21,10 @@ class Reservations extends Component {
     }
 
     this.calendarToggle = this.calendarToggle.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.handlePrevMonth = this.handlePrevMonth.bind(this);
     this.handleNextMonth = this.handleNextMonth.bind(this);
     this.handleDatePicker = this.handleDatePicker.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -81,7 +81,6 @@ class Reservations extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('hi');
   }
 
   render() {
@@ -91,14 +90,13 @@ class Reservations extends Component {
           <Icon name={'24x24_reservation'}/>
           <a href="#" styleName="reservation-header-link">Make a Reservation</a>
         </h3>
-        <div styleName="reservations-form-container">
-          <form styleName="reservation-availability-form" method="POST" name="reservation-availability-form">
+        <div>
+          <form method="POST" name="reservation-availability-form">
             <ul styleName="reservation-fields">
               <li styleName="date-picker">
                 <div styleName="yselect">
                   <Icon name={'18x18_reservation'} />
-                  <input 
-                    styleName="date-input" 
+                  <input
                     name="reservation_datetime_date" 
                     type="text" 
                     value={utils.formatDateInputValue(this.state.dateSelected)} 
@@ -107,7 +105,7 @@ class Reservations extends Component {
                     />
                   <Icon name={'14x14_triangle_down'} />
                 </div>
-                <div styleName="calendar-popup hidden-cal">
+                <div>
                   <Calendar 
                     calendar={this.state.calendar} 
                     calendarDisplay={this.state.calendarDisplay}

@@ -90,20 +90,12 @@ const generateCalendarMonth = (monthIndex, year) => {
   return null;
 };
 
-const calculateDateTo = (dateFrom) => {
+const calculateDate61DaysAhead = (dateFrom) => {
   let dateTo = new Date(dateFrom.getFullYear(), dateFrom.getMonth(), dateFrom.getDate() + 61);
   return dateTo;
 }
 const formatDate = (date) => {
-  if (date instanceof Date) {
-    let month = date.getMonth();
-    let day = date.getDate();
-    let year = date.getFullYear();
-    
-    return `${month + 1}/${day}/${year}`;
-  }
-
-	return null;
+  return (date instanceof Date) ? date.toLocaleDateString() : null;
 }
 
 const checkWithinDateRange = (c, d1, d2) => {
@@ -119,19 +111,15 @@ const formatDateInputValue = (date) => {
 }
 
 const compareTwoDates = (d1, d2) => {
-  return new Date(d1.getFullYear(), d1.getMonth(), d1.getDate())
-            .toDateString() === 
-            new Date(d2.getFullYear(), d2.getMonth(), d2.getDate())
-            .toDateString();
+  return d1.toLocaleDateString() === d2.toLocaleDateString();
 }
-
 
 module.exports = {
   checkLeapYear,
   calculateMonthEntry,
   generateCalendarMonth,
   monthByIndex,
-  calculateDateTo,
+  calculateDate61DaysAhead,
   formatDate,
   checkWithinDateRange,
   formatDateInputValue,
