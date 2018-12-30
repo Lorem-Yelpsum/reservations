@@ -3,9 +3,9 @@ import CSSModules from 'react-css-modules';
 import style from './icons.css';
 import './icons.svg';
 
-const Icon = (props) => (
-  <svg styleName={`icon-${props.name}`}>
-    <use xlinkHref={`#icons_${props.name}`} />
+const Icon = ({name, fill}) => (
+  <svg styleName={`icon-${name}`} fill={fill || '#000'}>
+    <use xlinkHref={`#icons_${name}`} />
   </svg>
 )
 
