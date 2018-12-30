@@ -5,26 +5,18 @@ import style from './calendarDay.css';
 
 const CalendarDay = ({currMonth, day, currYear, dateSelected, handleDatePicker}) => {
   const dateFrom = new Date();
-  const dateTo = utils.calculateDateTo(dateFrom);
+  const dateTo = utils.calculateDate61DaysAhead(dateFrom);
+  const date = (day === null) ? null : new Date(currYear, currMonth, day);
   let checkDateWithinRange = false;
-  let date;
   let date_td_style;
   
   if (day === null) {
-    date = null;
     date_td_style = 'date-null';
   } else {
-    date = new Date(currYear, currMonth, day);
     checkDateWithinRange = utils.checkWithinDateRange(date, dateFrom, dateTo);
     date_td_style = (checkDateWithinRange) ? 'date-enabled' : 'date-disabled';
-
-    if (utils.compareTwoDates(date, dateSelected)) {
-      date_td_style += ' ' + 'date-selected';
-    } 
-    
-    if (utils.compareTwoDates(date, dateFrom)) {
-      date_td_style += ' ' + 'date-today';
-    }
+    utils.compareTwoDates(date, dateSelected) ? date_td_style += ' ' + 'date-selected' : null;
+    utils.compareTwoDates(date, dateFrom) ? date_td_style += ' ' + 'date-today' : null;
   }
 
   return (

@@ -23,15 +23,15 @@
 }
 
 .calendar thead td {
-  padding: 3px;
+  padding-top: 10px;
   color: #333;
-
+  vertical-align: bottom;
 }
 
-.calendar th {
+th {
   color: #d32323;
-  padding-bottom: 0;
-  padding-top: 0;
+  vertical-align: bottom;
+  padding-bottom: 5px;
 
 }
 
@@ -41,12 +41,13 @@
 
 .monthYear {
   color: #333;
-  font-weight: 600;
+  font-weight: bold;
 }
 
 .month-change-cell {
   cursor: pointer;
 }
 
-
-
+.calendar tbody {
+  margin-top: 20px;
+}

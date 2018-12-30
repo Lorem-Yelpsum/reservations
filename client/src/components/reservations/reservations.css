@@ -25,16 +25,8 @@
   color: #333;
 }
 
-.reservations-form-container {
-
-}
-
 .reservations-form-container input {
   border: none;
-}
-
-.reservation-availability-form {
-
 }
 
 .reservation-fields {
@@ -44,14 +36,6 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
-
-
-
-.calendar-popup {}
-
-.hidden-cal {}
-
-.date-input {}
 
 .date-picker {
   flex: 0 1 100%;
