@@ -12,15 +12,17 @@ for (let i = 0; i < 100; i++) {
 //RESTAURANTS
 for (let i = 0; i < 100; i++) {
   const range = ['Under $10', '$11-30', '$31-60', 'Above $61'];
+  const opening_time_range = ['07:00:00', '12:00:00', '14:00:00'];
+  const closing_time_range = ['17:00:00', '21:00:00', '21:30:00', '22:00:00', '22:30:00', '23:00:00', '23:30:00', '24:00:00'];
   let query = `INSERT INTO restaurants 
-  (rest_name, days_open, opening_time, closing_time, price_range, health_score) 
+  (rest_name, days_open, open_time, close_time, price_range, health_score) 
   VALUES 
   (?, 
     JSON_OBJECT(0, ${faker.random.boolean()}, 1, true, 2, true, 3, true, 4, true, 5, true, 6, ${faker.random.boolean()}), 
     ?, ?, ?, ?);`;
   let rest_name = faker.company.companyName();
-  let opening_time = `08:00:00`;
-  let closing_time = `24:00:00`;
+  let opening_time = opening_time_range[Math.floor(Math.random() * opening_time_range.length)];
+  let closing_time = closing_time_range[Math.floor(Math.random() * closing_time_range.length)];
   let price_range = range[Math.floor(Math.random() * range.length)];
   let health_score = faker.random.number({min: 60, max: 100});
   let params = [rest_name, opening_time, closing_time, price_range, health_score];

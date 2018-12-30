@@ -70,3 +70,7 @@ table span {
 .biz-open {
   color: #41a700;
 }
+
+.biz-closed {
+  color: #d32323;
+}
