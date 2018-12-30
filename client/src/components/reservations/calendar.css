@@ -6,7 +6,7 @@
   background-color: white;
   width: 275px;
   height: 290px;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #ccc;
   border-radius: 10px;
   font-family: 'helvetica neue'
 }
@@ -36,7 +36,7 @@
 }
 
 .calendar tbody td {
-  border: 2px solid #e6e6e6;
+  border: 2px solid #ccc;
 }
 
 .monthYear {
@@ -47,5 +47,6 @@
 .month-change-cell {
   cursor: pointer;
 }
+
 
 
