@@ -16,7 +16,7 @@ for (let i = 0; i < 100; i++) {
   (rest_name, days_open, opening_time, closing_time, price_range, health_score) 
   VALUES 
   (?, 
-    JSON_OBJECT('Sunday', false, 'Monday', true, 'Tuesday', true, 'Wednesday', true, 'Thursday', true, 'Friday', true, 'Saturday', false), 
+    JSON_OBJECT(0, ${faker.random.boolean()}, 1, true, 2, true, 3, true, 4, true, 5, true, 6, ${faker.random.boolean()}), 
     ?, ?, ?, ?);`;
   let rest_name = faker.company.companyName();
   let opening_time = `08:00:00`;
@@ -43,6 +43,3 @@ for (let i = 0; i < 100; i++) {
   let params = [rest_id, user_id, day, party_size, start_time, end_time];
   db.connection.query(query, params);
 }
-
-
-
