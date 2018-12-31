@@ -1,7 +1,7 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
 import style from './calendar.css';
-import utils from '../../utils/calendar-helpers.js';
+import utils from '../../../utils/calendar-helpers.js';
 import CalendarWeek from './CalendarWeek.jsx';
 
 const Calendar = (props) => {

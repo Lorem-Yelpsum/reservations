@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import CSSModules from 'react-css-modules';
 import style from './reservations.css';
-import Icon from '../icons/Icon.jsx';
-import Calendar from './Calendar.jsx';
-import PeoplePicker from './PeoplePicker.jsx';
-import TimePicker from './TimePicker.jsx';
-
 import utils from '../../utils/calendar-helpers.js';
+import Icon from '../icons/Icon.jsx';
+import Calendar from './calendar/Calendar.jsx';
+import PeoplePicker from './select/PeoplePicker.jsx';
+import TimePicker from './select/TimePicker.jsx';
+
 
 class Reservations extends Component {
   constructor(props) {
@@ -37,17 +37,17 @@ class Reservations extends Component {
       currMonth: today.getMonth(),
       currYear: today.getFullYear(),
       calendar: calendarMonth,
-      dateSelected: today.toLocaleDateString(),
+      dateSelected: utils.formatDate(today),
     });
   }
 
   componentDidUpdate(prevProps) {
     if (this.props.open_time !== this.state.timeSelected && !this.state.timeSelected) {
       this.setState({
-        timeSelected: this.props.open_time
+        timeSelected: this.props.open_time,
       }) 
     }
-  }
+  } 
 
   calendarToggle() {
     this.setState(prevState => {
@@ -85,8 +85,9 @@ class Reservations extends Component {
 
   handleDatePicker(e) {
     e.stopPropagation();
+    let newDateSelected = utils.formatDate(new Date(e.target.dataset.date));
     this.setState({
-      dateSelected: e.target.dataset.date,
+      dateSelected: newDateSelected,
       calendarDisplay: false
     })
   }
@@ -99,14 +100,36 @@ class Reservations extends Component {
 
   handlePeoplePicker(e) {
     this.setState({
-      partySelected: e.target.value
+      partySelected: parseInt(e.target.value)
     })
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    if (this.state.dateSelected && this.state.timeSelected && this.state.partySelected) {
-      console.log(this.state.dateSelected, this.state.timeSelected, this.state.partySelected);
+    let {dateSelected, timeSelected, partySelected} = this.state;
+    let {rest_id} = this.props;
+
+    if (dateSelected && timeSelected && partySelected) {
+      let data = {
+        rest_id,
+        user_id: 1,
+        date: dateSelected,
+        reservation_time: timeSelected,
+        party_size: partySelected
+      }
+
+      fetch(`/reservations/${rest_id}/`, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(res => res.json())
+      .then(response => {
+        console.log('Success:', response);
+        alert('Reservation Booked!');
+      })
+      .catch(error => console.error('Error:', error))
     }
   }
 
