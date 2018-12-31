@@ -14,10 +14,11 @@ CREATE TABLE `restaurants` (
   `_id` INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   `rest_name` VARCHAR(50),
   `days_open` JSON NOT NULL,
-  `opening_time` TIME NOT NULL,
-  `closing_time` TIME NOT NULL,
+  `open_time` TIME NOT NULL,
+  `close_time` TIME NOT NULL,
   `price_range` ENUM('Under $10', '$11-30', '$31-60', 'Above $61') NOT NULL,
-  `health_score` INT NOT NULL
+  `health_score` INT NOT NULL,
+  `max_party` INT NOT NULL
 );
 
 CREATE TABLE `reservations` (

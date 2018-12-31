@@ -13,6 +13,9 @@ class Sidebar extends Component {
       days_open: {},
       price_range: '',
       health_score: '',
+      open_time: '',
+      close_time: '',
+      max_party: 0
     }
   }
 
@@ -21,24 +24,25 @@ class Sidebar extends Component {
     .then(response => {
       return response.json();
     }).then(results => {
-      let {days_open, health_score, price_range, open_time, close_time} = results[0];
+      let {days_open, health_score, price_range, open_time, close_time, max_party} = results[0];
       this.setState({
         days_open: JSON.parse(days_open),
         price_range,
         health_score,
         open_time,
-        close_time
+        close_time,
+        max_party
       });
     });
   }
 
   render() {
-    let {days_open, price_range, health_score, open_time, close_time} = this.state;
+    let {days_open, price_range, health_score, open_time, close_time, max_party} = this.state;
     let isOpen = moment().isBetween(moment(open_time, 'hh:mm:ss'), moment(close_time, 'hh:mm:ss'));
 
     return (
       <div id="sidebar">
-        <Reservations days_open={days_open}/>
+        <Reservations days_open={days_open} max_party={max_party} open_time={open_time} close_time={close_time} />
         <Summary price_range={price_range} health_score={health_score} open_time={open_time} close_time={close_time} isOpen={isOpen} />
         <Hours days_open={days_open} open_time={open_time} close_time={close_time} isOpen={isOpen}/>
       </div>
