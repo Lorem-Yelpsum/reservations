@@ -20,9 +20,7 @@ app.get('/restaurant/:rest_id', (req, res) => {
 
 app.get('/restaurantInfo/:rest_id', db.getRestaurantInfo);
 
-app.get('/reservations/:rest_id/', db.getAllReserv);
-
-app.get('/reservations/:rest_id/:reserv_id', db.getSingleReserv);
+app.get('/reservations/:rest_id/', db.getRestaurantReservations);
 
 app.post('/reservations/:rest_id/', db.createReservation);
 
