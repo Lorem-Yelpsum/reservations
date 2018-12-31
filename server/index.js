@@ -24,7 +24,7 @@ app.get('/reservations/:rest_id/', db.getAllReserv);
 
 app.get('/reservations/:rest_id/:reserv_id', db.getSingleReserv);
 
-app.post('/reservations/:rest_id/', db.postNewReserv);
+app.post('/reservations/:rest_id/', db.createReservation);
 
 const PORT = 3005;
 app.listen(PORT, () => {
