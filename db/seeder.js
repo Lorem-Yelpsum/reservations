@@ -34,15 +34,14 @@ for (let i = 0; i < 100; i++) {
 for (let i = 0; i < 100; i++) {
   let randomDates = [faker.date.recent()];
   let query = `INSERT INTO reservations 
-  (rest_id, user_id, day, party_size, start_time, end_time) 
-  VALUES (?, ?, ?, ?, ?, ?);`;
+  (rest_id, user_id, date, party_size, reservation_time) 
+  VALUES (?, ?, ?, ?, ?);`;
   let rest_id = faker.random.number({min: 1, max: 100});
   let user_id = faker.random.number({min: 1, max: 100});
-  let day = randomDates[Math.floor(Math.random() * randomDates.length)];
+  let date = randomDates[Math.floor(Math.random() * randomDates.length)];
   let party_size = faker.random.number({min: 1, max: 10});
   let randomHour = faker.random.number({min: 8, max: 22});
-  let start_time = `${randomHour}:00:00`;
-  let end_time = `${randomHour + 2}:00:00`;
-  let params = [rest_id, user_id, day, party_size, start_time, end_time];
+  let reservation_time = `${randomHour}:00:00`;
+  let params = [rest_id, user_id, date, party_size, reservation_time];
   db.connection.query(query, params);
 }

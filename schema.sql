@@ -25,16 +25,11 @@ CREATE TABLE `reservations` (
   `_id` INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
   `rest_id` INT NOT NULL,
   `user_id` INT NOT NULL,
-  `day` DATE NOT NULL,
+  `date` DATE NOT NULL,
   `party_size` INT NOT NULL,
-  `start_time` TIME NOT NULL,
-  `end_time` TIME NOT NULL,
+  `reservation_time` TIME NOT NULL,
   FOREIGN KEY (rest_id)
     REFERENCES restaurants(_id),
   FOREIGN KEY (user_id)
     REFERENCES users(_id)
 );
-
-
-
-
