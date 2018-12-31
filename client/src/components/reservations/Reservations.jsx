@@ -3,7 +3,8 @@ import CSSModules from 'react-css-modules';
 import style from './reservations.css';
 import Icon from '../icons/Icon.jsx';
 import Calendar from './Calendar.jsx';
-import Select from './Select.jsx';
+import PeoplePicker from './PeoplePicker.jsx';
+import TimePicker from './TimePicker.jsx';
 
 import utils from '../../utils/calendar-helpers.js';
 
@@ -17,13 +18,15 @@ class Reservations extends Component {
       calendarDisplay: false,
       dateSelected: new Date(),
       timeSelected: null,
-      partySelected: null,
+      partySelected: 2,
     }
 
     this.calendarToggle = this.calendarToggle.bind(this);
     this.handlePrevMonth = this.handlePrevMonth.bind(this);
     this.handleNextMonth = this.handleNextMonth.bind(this);
     this.handleDatePicker = this.handleDatePicker.bind(this);
+    this.handleTimePicker = this.handleTimePicker.bind(this);
+    this.handlePeoplePicker = this.handlePeoplePicker.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -33,7 +36,7 @@ class Reservations extends Component {
     this.setState({
       currMonth: today.getMonth(),
       currYear: today.getFullYear(),
-      calendar: calendarMonth
+      calendar: calendarMonth,
     });
   }
 
@@ -79,12 +82,30 @@ class Reservations extends Component {
     })
   }
 
+  handleTimePicker(e) {
+    this.setState({
+      timeSelected: e.target.value
+    })
+  }
+
+  handlePeoplePicker(e) {
+    this.setState({
+      partySelected: e.target.value
+    })
+  }
+
   handleSubmit(e) {
     e.preventDefault();
+    let {dateSelected, timeSelected, partySelected} = this.state;
+    console.log('hi');
+      console.log(dateSelected);
+      console.log(timeSelected);
+      console.log(partySelected);
+    
   }
 
   render() {
-    let {days_open} = this.props;
+    let {days_open, max_party, open_time, close_time} = this.props;
 
     return (
       <div styleName="reservations-container">
@@ -124,14 +145,14 @@ class Reservations extends Component {
               <li styleName="time-picker">
                 <div styleName="yselect">
                   <Icon name={'18x18_clock'}/>
-                  <Select />
+                  <TimePicker open_time={open_time} close_time={close_time} handleTimePicker={this.handleTimePicker} />
                   <Icon name={'14x14_triangle_down'} />
                 </div>
               </li>
               <li styleName="people-picker">
                 <div styleName="yselect">
                   <Icon name={'18x18_friends'} />
-                  <Select />
+                  <PeoplePicker max_party={max_party} handlePeoplePicker={this.handlePeoplePicker}/>
                   <Icon name={'14x14_triangle_down'} />
                 </div>
               </li>
