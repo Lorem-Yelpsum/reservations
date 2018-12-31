@@ -10,6 +10,7 @@ class Sidebar extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      rest_id: null,
       days_open: {},
       price_range: '',
       health_score: '',
@@ -26,25 +27,28 @@ class Sidebar extends Component {
     .then(response => {
       return response.json();
     }).then(results => {
-      let {days_open, health_score, price_range, open_time, close_time, max_party} = results[0];
+      let {_id, days_open, health_score, price_range, open_time, close_time, max_party} = results[0];
       this.setState({
+        rest_id: _id,
         days_open: JSON.parse(days_open),
         price_range,
         health_score,
         open_time,
         close_time,
         max_party
+      }, () => {
+        console.log(this.state);
       });
     });
   }
 
   render() {
-    let {days_open, price_range, health_score, open_time, close_time, max_party} = this.state;
+    let {rest_id, days_open, price_range, health_score, open_time, close_time, max_party} = this.state;
     let isOpen = moment().isBetween(moment(open_time, 'hh:mm:ss'), moment(close_time, 'hh:mm:ss'));
 
     return (
       <div id="sidebar">
-        <Reservations days_open={days_open} max_party={max_party} open_time={open_time} close_time={close_time} />
+        <Reservations rest_id={rest_id} days_open={days_open} max_party={max_party} open_time={open_time} close_time={close_time} />
         <Summary price_range={price_range} health_score={health_score} open_time={open_time} close_time={close_time} isOpen={isOpen} />
         <Hours days_open={days_open} open_time={open_time} close_time={close_time} isOpen={isOpen}/>
       </div>

@@ -39,7 +39,16 @@ const getSingleReserv = (req, res) => {
 };
 
 const createReservation = (req, res) => {
-  res.status(201).end('Post Request Received');
+  let {rest_id, user_id, date, party_size, reservation_time} = req.body;
+  let queryStr = `INSERT INTO reservations (rest_id, user_id, date, party_size, reservation_time) VALUES (?, ?, ?, ?, ?)`;
+  let params = [rest_id, user_id, date, party_size, reservation_time];
+  connection.query(queryStr, params, (err, results) => {
+    if (err) {
+      res.status(422).send(err);
+    } else {
+      res.status(201).json(results);
+    }
+  });
 }
 
 module.exports = {

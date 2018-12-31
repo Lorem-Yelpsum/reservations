@@ -1,7 +1,7 @@
 import React from 'react';
 import CSSModules from 'react-css-modules';
-import utils from '../../utils/calendar-helpers.js';
-import style from './calendarDay.css';
+import utils from '../../../utils/calendar-helpers.js';
+import style from './calendar.css';
 
 const CalendarDay = ({currMonth, day, currYear, dateSelected, handleDatePicker, days_open}) => {
   const dateFrom = new Date();
@@ -26,7 +26,7 @@ const CalendarDay = ({currMonth, day, currYear, dateSelected, handleDatePicker, 
   return (
     <td 
       styleName={date_td_style} 
-      data-date={utils.formatDate(date)} 
+      data-date={date} 
       onClick={checkDateWithinRange && checkDateWithinDaysOpen ? handleDatePicker : null}>
       {day}
     </td>

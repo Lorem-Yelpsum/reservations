@@ -106,8 +106,9 @@ const calculateDate61DaysAhead = (dateFrom) => {
   let dateTo = new Date(dateFrom.getFullYear(), dateFrom.getMonth(), dateFrom.getDate() + 61);
   return dateTo;
 }
+
 const formatDate = (date) => {
-  return (date instanceof Date) ? date.toLocaleDateString() : null;
+  return (date instanceof Date) ? moment(date).format('YYYY-MM-DD') : null;
 }
 
 const checkWithinDateRange = (c, d1, d2) => {
@@ -119,10 +120,10 @@ const checkWithinDateRange = (c, d1, d2) => {
 }
 
 const formatDateInputValue = (date) => {
-  let nameOfDay = moment(date, 'MM-DD-YYYY').format('dddd');
-  let month = moment(date, 'MM-DD-YYYY').format('MMMM');
-  let day = moment(date, 'MM-DD-YYYY').format('DD');
-  let year = moment(date, 'MM-DD-YYYY').format('YYYY');
+  let nameOfDay = moment(date, 'YYYY-MM-DD').format('dddd');
+  let month = moment(date, 'YYYY-MM-DD').format('MMMM');
+  let day = moment(date, 'YYYY-MM-DD').format('DD');
+  let year = moment(date, 'YYYY-MM-DD').format('YYYY');
   return `${nameOfDay}, ${month} ${day}, ${year}`;
 }
 
