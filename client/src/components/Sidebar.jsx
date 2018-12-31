@@ -13,7 +13,7 @@ class Sidebar extends Component {
       rest_id: null,
       days_open: {},
       price_range: '',
-      health_score: '',
+      health_score: null,
       open_time: '',
       close_time: '',
       max_party: 0
