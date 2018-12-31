@@ -12,7 +12,7 @@ const TimePicker = ({open_time, close_time, handleTimePicker}) => {
   }
 
   let options = timeslots.map((time, index) => {
-    return <option key={index} value={moment(time, 'h:mm a').format('hh:mm:ss')}>{time}</option>
+    return <option key={index} value={moment(time, 'h:mm a').format('HH:mm:ss')}>{time}</option>
   });
 
   return (
