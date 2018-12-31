@@ -38,7 +38,7 @@ const getSingleReserv = (req, res) => {
   });
 };
 
-const postNewReserv = (req, res) => {
+const createReservation = (req, res) => {
   res.status(201).end('Post Request Received');
 }
 
@@ -47,5 +47,5 @@ module.exports = {
   getRestaurantInfo,
   getAllReserv,
   getSingleReserv,
-  postNewReserv
+  createReservation
 }

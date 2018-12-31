@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 const totalDaysByMonthIndex = {
   0: 31,
   1: 28,
@@ -117,7 +119,11 @@ const checkWithinDateRange = (c, d1, d2) => {
 }
 
 const formatDateInputValue = (date) => {
-  return `${dayByIndex[date.getDay()]}, ${monthByIndex[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+  let nameOfDay = moment(date, 'MM-DD-YYYY').format('dddd');
+  let month = moment(date, 'MM-DD-YYYY').format('MMMM');
+  let day = moment(date, 'MM-DD-YYYY').format('DD');
+  let year = moment(date, 'MM-DD-YYYY').format('YYYY');
+  return `${nameOfDay}, ${month} ${day}, ${year}`;
 }
 
 const compareTwoDates = (d1, d2) => {

@@ -16,7 +16,7 @@ class Reservations extends Component {
       currYear: null,
       calendar: [],
       calendarDisplay: false,
-      dateSelected: new Date(),
+      dateSelected: null,
       timeSelected: null,
       partySelected: 2,
     }
@@ -37,7 +37,16 @@ class Reservations extends Component {
       currMonth: today.getMonth(),
       currYear: today.getFullYear(),
       calendar: calendarMonth,
+      dateSelected: today.toLocaleDateString(),
     });
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.open_time !== this.state.timeSelected && !this.state.timeSelected) {
+      this.setState({
+        timeSelected: this.props.open_time
+      }) 
+    }
   }
 
   calendarToggle() {
@@ -77,7 +86,7 @@ class Reservations extends Component {
   handleDatePicker(e) {
     e.stopPropagation();
     this.setState({
-      dateSelected: new Date(e.target.dataset.date),
+      dateSelected: e.target.dataset.date,
       calendarDisplay: false
     })
   }
@@ -96,12 +105,9 @@ class Reservations extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let {dateSelected, timeSelected, partySelected} = this.state;
-    console.log('hi');
-      console.log(dateSelected);
-      console.log(timeSelected);
-      console.log(partySelected);
-    
+    if (this.state.dateSelected && this.state.timeSelected && this.state.partySelected) {
+      console.log(this.state.dateSelected, this.state.timeSelected, this.state.partySelected);
+    }
   }
 
   render() {

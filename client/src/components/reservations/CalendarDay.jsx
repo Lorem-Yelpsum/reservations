@@ -18,7 +18,7 @@ const CalendarDay = ({currMonth, day, currYear, dateSelected, handleDatePicker, 
     checkDateWithinDaysOpen = utils.compareDateToDaysOpen(days_open, date);
     date_td_style = (checkDateWithinRange && checkDateWithinDaysOpen) ? 'date-enabled' : 'date-disabled';
     if (date_td_style === 'date-enabled') {
-      utils.compareTwoDates(date, dateSelected) ? date_td_style += ' ' + 'date-selected' : null;
+      utils.compareTwoDates(date, new Date(dateSelected)) ? date_td_style += ' ' + 'date-selected' : null;
       utils.compareTwoDates(date, dateFrom) ? date_td_style += ' ' + 'date-today' : null;
     }
   }
