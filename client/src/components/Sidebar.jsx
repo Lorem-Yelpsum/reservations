@@ -20,7 +20,9 @@ class Sidebar extends Component {
   }
 
   componentDidMount() {
-    fetch(`/restaurantInfo/${window.rest_id}`)
+    let getRoute = window.rest_id !== undefined ? `/restaurantInfo/${window.rest_id}` : `/restaurantInfo/1`;
+
+    fetch(getRoute)
     .then(response => {
       return response.json();
     }).then(results => {
