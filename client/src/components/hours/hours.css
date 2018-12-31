@@ -10,20 +10,38 @@
   color: #d32323;
   margin-left: 25px;
   font-size: 15px;
+  font-weight: bold;
+}
+
+.extra-cell {
+  font-weight: 600;
+  padding-bottom: 2px;
 }
 
 .open-now {
   color: #41a700;
-  font-weight: 600;
+}
+
+.closed-now {
+  color: #d32323;
 }
 
 .hours-table {
-  border-collapse: separate;
-  border-spacing: 25px 0;
   width: 264px;
   height: 198px;
   font-size: 12px;
-  padding: 0;
+  text-align: left;
+  margin-left: 15px;
+  vertical-align: baseline;
+  border-spacing: 10px 0;
+}
+
+.hours-table tbody th {
+  color: #333;
+}
+
+.hours-table tbody td {
+  padding-top: 7px;
 }
 
 span {

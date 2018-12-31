@@ -38,6 +38,16 @@ const dayByIndex = {
   6: 'Saturday'
 }
 
+const biz_hours_order = {
+  0: 'Mon',
+  1: 'Tues',
+  2: 'Wed',
+  3: 'Thurs',
+  4: 'Fri',
+  5: 'Sat',
+  6: 'Sun'
+}
+
 const checkLeapYear = (year) => {
   return new Date(year, 1, 29).getDate() === 29;
 };
@@ -121,6 +131,13 @@ const compareDateToDaysOpen = (days_open, date) => {
   return false;
 }
 
+const reorderDaysToStartOnMonday = (days_open) => {
+  let days_open_reordered = Object.values(days_open);
+  let temp = days_open_reordered.shift();
+  days_open_reordered.push(temp);
+  return days_open_reordered;
+}
+
 module.exports = {
   checkLeapYear,
   calculateMonthEntry,
@@ -131,5 +148,7 @@ module.exports = {
   checkWithinDateRange,
   formatDateInputValue,
   compareTwoDates,
-  compareDateToDaysOpen
+  compareDateToDaysOpen,
+  biz_hours_order,
+  reorderDaysToStartOnMonday
 };
