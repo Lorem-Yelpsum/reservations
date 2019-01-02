@@ -128,7 +128,9 @@ const formatDateInputValue = (date) => {
 }
 
 const compareTwoDates = (d1, d2) => {
-  return d1.toLocaleDateString() === d2.toLocaleDateString();
+  d1 = typeof d1 === 'string' ? d1 : moment(d1).format('YYYY-MM-DD');
+  d2 = typeof d2 === 'string' ? d2 : moment(d2).format('YYYY-MM-DD');
+  return d1 === d2;
 }
 
 const compareDateToDaysOpen = (days_open, date) => {

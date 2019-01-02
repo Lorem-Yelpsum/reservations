@@ -36,8 +36,6 @@ class Sidebar extends Component {
         open_time,
         close_time,
         max_party
-      }, () => {
-        console.log(this.state);
       });
     });
   }
