@@ -18,7 +18,7 @@ const Summary = ({price_range, health_score, open_time, close_time, isOpen}) => 
         <ul>
           <li>
             <div styleName="li-item-icon">
-              <Icon name={'24x24_clock'} fill={isOpen ? '#41a700' : '#d32323'} />
+              <Icon name={'24x24_clock'} width={20} height= {20} fill={isOpen ? '#41a700' : '#d32323'} />
             </div>
             <div styleName="li-underline li-description">
               <dl>
@@ -33,16 +33,16 @@ const Summary = ({price_range, health_score, open_time, close_time, isOpen}) => 
           </li>
           <li>
             <div styleName="li-item-icon">
-              <Icon name={'24x24_food'} />
+              <Icon name={'24x24_food'} width={20} height={20} fill={'#666'} />
             </div>
             <div styleName="li-underline li-description li-full-menu">
               <a href="#" styleName="menu-link">Full menu</a>
-              <Icon name={`24x24_external_link`}/>
+              <Icon name={`24x24_external_link`} width={15} height={15} fill={'#0073bb'} />
             </div>
           </li>
           <li>
             <div styleName="li-item-icon">
-              <Icon name={`${price_scale[price_range]}`} />
+              <Icon name={`${price_scale[price_range]}`} width={20} height={20} />
             </div>
             <div styleName="li-underline li-description">
               <dl>
@@ -53,7 +53,7 @@ const Summary = ({price_range, health_score, open_time, close_time, isOpen}) => 
           </li>
           <li>
             <div styleName="li-item-icon">
-              <Icon name={'24x24_medical'} />
+              <Icon name={'24x24_medical'} width={20} height={20} fill={'#666'} />
             </div>
             <div styleName="li-description">
               <dl>
