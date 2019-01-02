@@ -43,14 +43,17 @@ class Sidebar extends Component {
   render() {
     let {rest_id, days_open, price_range, health_score, open_time, close_time, max_party} = this.state;
     let isOpen = moment().isBetween(moment(open_time, 'hh:mm:ss'), moment(close_time, 'hh:mm:ss'));
-
-    return (
-      <div id="sidebar">
-        <Reservations rest_id={rest_id} days_open={days_open} max_party={max_party} open_time={open_time} close_time={close_time} />
-        <Summary price_range={price_range} health_score={health_score} open_time={open_time} close_time={close_time} isOpen={isOpen} />
-        <Hours days_open={days_open} open_time={open_time} close_time={close_time} isOpen={isOpen}/>
-      </div>
-    );
+    if (rest_id === null) {
+      return (<div></div>)
+    } else {
+      return (
+        <div id="sidebar">
+          <Reservations rest_id={rest_id} days_open={days_open} max_party={max_party} open_time={open_time} close_time={close_time} />
+          <Summary price_range={price_range} health_score={health_score} open_time={open_time} close_time={close_time} isOpen={isOpen} />
+          <Hours days_open={days_open} open_time={open_time} close_time={close_time} isOpen={isOpen}/>
+        </div>
+      );
+    }
   }
 }
 
