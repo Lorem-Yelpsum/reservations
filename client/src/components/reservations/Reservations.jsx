@@ -139,7 +139,7 @@ class Reservations extends Component {
     return (
       <div styleName="reservations-container">
         <h3>
-          <Icon name={'24x24_reservation'}/>
+          <Icon name={'24x24_reservation'} width={25} height={25} fill={'#333'}/>
           <a href="#" styleName="reservation-header-link">Make a Reservation</a>
         </h3>
         <div>
@@ -147,7 +147,7 @@ class Reservations extends Component {
             <ul styleName="reservation-fields">
               <li styleName="date-picker">
                 <div styleName="yselect">
-                  <Icon name={'18x18_reservation'} />
+                  <Icon name={'18x18_reservation'} width={15} height={15} fill={'#666'} />
                   <input
                     name="reservation_datetime_date" 
                     type="text" 
@@ -155,7 +155,7 @@ class Reservations extends Component {
                     onClick={this.calendarToggle} 
                     readOnly
                     />
-                  <Icon name={'14x14_triangle_down'} />
+                  <Icon name={'14x14_triangle_down'} width={12} height={12} />
                 </div>
                 <div>
                   <Calendar 
@@ -173,16 +173,16 @@ class Reservations extends Component {
               </li>
               <li styleName="time-picker">
                 <div styleName="yselect">
-                  <Icon name={'18x18_clock'}/>
+                  <Icon name={'18x18_clock'} width={15} height={15} fill={'#666'} />
                   <TimePicker open_time={open_time} close_time={close_time} handleTimePicker={this.handleTimePicker} />
-                  <Icon name={'14x14_triangle_down'} />
+                  <Icon name={'14x14_triangle_down'} width={12} height={12} />
                 </div>
               </li>
               <li styleName="people-picker">
                 <div styleName="yselect">
-                  <Icon name={'18x18_friends'} />
+                  <Icon name={'18x18_friends'} width={15} height={15} />
                   <PeoplePicker max_party={max_party} handlePeoplePicker={this.handlePeoplePicker}/>
-                  <Icon name={'14x14_triangle_down'} />
+                  <Icon name={'14x14_triangle_down'} width={12} height={12} />
                 </div>
               </li>
             </ul>

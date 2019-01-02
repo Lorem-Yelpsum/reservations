@@ -21,7 +21,7 @@ const Hours = ({days_open, open_time, close_time, isOpen}) => {
           </tbody>
         </table>
         <div styleName="biz-info-link">
-          <Icon name={`14x14_pencil`} />
+          <Icon name={`14x14_pencil`} width={12} height={12} fill={'#0073bb'} />
           <a href='#' styleName="biz-link">Edit business info</a>
         </div>
       </div>

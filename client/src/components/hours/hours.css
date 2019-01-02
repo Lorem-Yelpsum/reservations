@@ -57,6 +57,7 @@ span {
   text-decoration: none;
   color: #0073bb;
   font-size: 12px;
+  margin-left: 5px;
 }
 
 .biz-link:hover {
