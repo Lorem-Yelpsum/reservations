@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import Icon from '../icons/Icon.jsx';
 import CSSModules from 'react-css-modules';
 import style from './reservations.css';
 import utils from '../../utils/calendar-helpers.js';
-import Icon from '../icons/Icon.jsx';
 import Calendar from './calendar/Calendar.jsx';
 import PeoplePicker from './select/PeoplePicker.jsx';
 import TimePicker from './select/TimePicker.jsx';
@@ -89,7 +89,7 @@ class Reservations extends Component {
     this.setState({
       dateSelected: newDateSelected,
       calendarDisplay: false
-    })
+    });
   }
 
   handleTimePicker(e) {

@@ -10,17 +10,21 @@ const CalendarDay = ({currMonth, day, currYear, dateSelected, handleDatePicker, 
   let checkDateWithinRange = false;
   let checkDateWithinDaysOpen = false;
   let date_td_style;
-  
+
   if (day === null) {
     date_td_style = 'date-null';
   } else {
     checkDateWithinRange = utils.checkWithinDateRange(date, dateFrom, dateTo);
     checkDateWithinDaysOpen = utils.compareDateToDaysOpen(days_open, date);
-    date_td_style = (checkDateWithinRange && checkDateWithinDaysOpen) ? 'date-enabled' : 'date-disabled';
-    if (date_td_style === 'date-enabled') {
-      utils.compareTwoDates(date, new Date(dateSelected)) ? date_td_style += ' ' + 'date-selected' : null;
-      utils.compareTwoDates(date, dateFrom) ? date_td_style += ' ' + 'date-today' : null;
-    }
+    if (checkDateWithinRange && checkDateWithinDaysOpen && utils.compareTwoDates(date, dateSelected)) {
+      date_td_style = 'date-enabled date-selected';
+    } else if (checkDateWithinRange && checkDateWithinDaysOpen && utils.compareTwoDates(date, dateFrom)) {
+      date_td_style = 'date-enabled date-today';
+    } else if (checkDateWithinRange && checkDateWithinDaysOpen) {
+      date_td_style = 'date-enabled';
+    } else {
+      date_td_style = 'date-disabled';
+    } 
   }
 
   return (
