@@ -118,7 +118,7 @@ class Reservations extends Component {
         party_size: partySelected
       }
 
-      fetch(`/reservations/${rest_id}/`, {
+      fetch(`http://127.0.0.1:3005/reservations/${rest_id}/`, {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
