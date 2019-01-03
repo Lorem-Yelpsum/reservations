@@ -9,7 +9,7 @@
     "server-dev": "nodemon server/index.js",
     "seeder-dev": "node db/seeder.js",
     "start": "nodemon server/index.js",
-    "build": "webpack -d --watch"
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
