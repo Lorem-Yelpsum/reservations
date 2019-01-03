@@ -13,16 +13,16 @@ app.use(express.static(path.join(__dirname, '../client/dist/')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/restaurant/:rest_id', (req, res) => {
-    const rest_id = req.params.rest_id;
-    res.status(200).send(template(rest_id));
+app.get('/restaurant/:restaurantId', (req, res) => {
+    const restaurantId = req.params.restaurantId;
+    res.status(200).send(template(restaurantId));
 });
 
-app.get('/restaurantInfo/:rest_id', db.getRestaurantInfo);
+app.get('/restaurantInfo/:restaurantId', db.getRestaurantInfo);
 
-app.get('/reservations/:rest_id/', db.getRestaurantReservations);
+app.get('/reservations/:restaurantId/', db.getRestaurantReservations);
 
-app.post('/reservations/:rest_id/', db.createReservation);
+app.post('/reservations/:restaurantId/', db.createReservation);
 
 const PORT = 3005;
 app.listen(PORT, () => {
