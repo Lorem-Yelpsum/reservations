@@ -5,7 +5,6 @@ let template = (rest_id) => {
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>No Reservations</title>
-      
     </head>
     <body>
       <div id="sidebar">
@@ -14,6 +13,12 @@ let template = (rest_id) => {
         window.rest_id = ${rest_id}
       </script>
       <script type="text/javascript" src="/bundle.js"></script>
+      <script>
+        ReactDOM.render(
+          React.createElement(Sidebar, {}, null),
+          document.getElementById('sidebar')
+        );
+      </script>
     </body>
   </html>`;
 }
