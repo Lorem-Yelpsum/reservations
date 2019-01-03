@@ -1,4 +1,4 @@
-let template = (rest_id) => {
+let template = (restaurantId) => {
   return `<!DOCTYPE html>
   <html lang="en">
     <head>
@@ -12,7 +12,7 @@ let template = (rest_id) => {
       <script type="text/javascript" src="/bundle.js"></script>
       <script>
         ReactDOM.render(
-          React.createElement(Sidebar, {restaurantId: ${rest_id}}, null),
+          React.createElement(Sidebar, {restaurantId: ${restaurantId}}, null),
           document.getElementById('sidebar')
         );
       </script>

@@ -14,7 +14,7 @@ connection.connect();
 
 const getRestaurantInfo = (req, res) => {
   let queryStr = `SELECT * FROM restaurants WHERE restaurants._id=?`;
-  connection.query(queryStr, [req.params.rest_id], (err, results) => {
+  connection.query(queryStr, [req.params.restaurantId], (err, results) => {
     if (err) {
       res.status(500).send(err);
     } else {
@@ -25,7 +25,7 @@ const getRestaurantInfo = (req, res) => {
 
 const getRestaurantReservations = (req, res) => {
   let queryStr = `SELECT _id, date, party_size, reservation_time FROM reservations WHERE reservations.rest_id=?`;
-  connection.query(queryStr, [req.params.rest_id], (err, results) => {
+  connection.query(queryStr, [req.params.restaurantId], (err, results) => {
     if (err) {
       res.status(500).send(err);
     } else {
@@ -35,9 +35,9 @@ const getRestaurantReservations = (req, res) => {
 };
 
 const createReservation = (req, res) => {
-  let {rest_id, user_id, date, party_size, reservation_time} = req.body;
+  let {restaurantId, user_id, date, party_size, reservation_time} = req.body;
   let queryStr = `INSERT INTO reservations (rest_id, user_id, date, party_size, reservation_time) VALUES (?, ?, ?, ?, ?)`;
-  let params = [rest_id, user_id, date, party_size, reservation_time];
+  let params = [restaurantId, user_id, date, party_size, reservation_time];
   connection.query(queryStr, params, (err, results) => {
     if (err) {
       res.status(422).send(err);
