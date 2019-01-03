@@ -9,13 +9,10 @@ let template = (rest_id) => {
     <body>
       <div id="sidebar">
       </div>
-      <script>
-        window.rest_id = ${rest_id}
-      </script>
       <script type="text/javascript" src="/bundle.js"></script>
       <script>
         ReactDOM.render(
-          React.createElement(Sidebar, {}, null),
+          React.createElement(Sidebar, {restaurantId: ${rest_id}}, null),
           document.getElementById('sidebar')
         );
       </script>

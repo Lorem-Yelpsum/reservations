@@ -21,7 +21,7 @@ class Sidebar extends Component {
   }
 
   componentDidMount() {
-    let getRoute = window.rest_id !== undefined ? `/restaurantInfo/${window.rest_id}` : `/restaurantInfo/1`;
+    let getRoute = this.props.restaurantId !== undefined ? `/restaurantInfo/${this.props.restaurantId}` : `/restaurantInfo/1`;
 
     fetch(getRoute)
     .then(response => {
