@@ -7,6 +7,7 @@
   padding: 14px 11px 11px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   z-index: 1;
+  position: relative;
 }
 
 .reservations-container h3 {
