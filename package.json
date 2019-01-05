@@ -10,7 +10,8 @@
     "seeder-dev": "node db/seeder.js",
     "start": "nodemon server/index.js",
     "build": "webpack --mode production",
-    "seed": "node db/seeder.js"
+    "seed": "node db/seeder.js",
+    "dockerize": "node db/seeder.js & node server/index.js"
   },
   "repository": {
     "type": "git",
