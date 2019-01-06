@@ -9,7 +9,7 @@ let template = (restaurantId) => {
     <body>
       <div id="sidebar">
       </div>
-      <script type="text/javascript" src="/bundle.js"></script>
+      <script type="text/javascript" src="http://13.59.28.19/bundle.js"></script>
       <script>
         ReactDOM.render(
           React.createElement(Sidebar, {restaurantId: ${restaurantId}}, null),

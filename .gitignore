@@ -64,4 +64,5 @@ config.js
 .DS_Store
 bundle.js
 steven-keypair.pem
+package-lock.json
 
