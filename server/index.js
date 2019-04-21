@@ -1,4 +1,5 @@
 const express = require('express');
+var compression = require('compression')
 const cors = require('cors');
 const path = require('path');
 const bodyParser = require('body-parser');
@@ -8,6 +9,7 @@ const template = require('./views/template.js');
 const app = express();
 
 app.use(cors());
+app.use(compression())
 
 app.use(morgan('dev'));
 
